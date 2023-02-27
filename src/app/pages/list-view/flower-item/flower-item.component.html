@@ -1,0 +1,16 @@
+<mat-card class="flower-card">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{ flower.name }}</mat-card-title>
+    <mat-card-subtitle>{{ flower.binomialName }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ flower.imgUrl }}"
+    alt="Photo of a {{ flower.name }}"
+  />
+  <mat-card-content>
+    <p>{{ flower.price }}</p>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>

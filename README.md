@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Problematicas encontradas
+
+1- Dudas respecto a la organizacion de los ficheros y enrutado
+2- Interfaces: En el fertilizerType al ser 2 estaticos...
+3- El input de flower item component inicializarlo?
