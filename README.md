@@ -31,3 +31,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1- Dudas respecto a la organizacion de los ficheros y enrutado
 2- Interfaces: En el fertilizerType al ser 2 estaticos...
 3- El input de flower item component inicializarlo?
+4- Flexlayout decprecated :( flex vs grid, finalmente grid

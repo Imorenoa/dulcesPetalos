@@ -1,16 +1,26 @@
 <mat-card class="flower-card">
   <mat-card-header>
-    <div mat-card-avatar></div>
     <mat-card-title>{{ flower.name }}</mat-card-title>
     <mat-card-subtitle>{{ flower.binomialName }}</mat-card-subtitle>
   </mat-card-header>
-  <img
-    mat-card-image
-    src="{{ flower.imgUrl }}"
-    alt="Photo of a {{ flower.name }}"
-  />
+  <div class="container-img">
+    <img
+      mat-card-image
+      class="card-img"
+      src="{{ flower.imgUrl }}"
+      alt="Photo of a {{ flower.name }}"
+    />
+  </div>
   <mat-card-content>
-    <p>{{ flower.price }}</p>
+    <p>{{ flower.price | currency : "EUR" }}</p>
   </mat-card-content>
-  <mat-card-actions> </mat-card-actions>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="basic"
+      [routerLink]="'/detail/' + flower.id"
+    >
+      Leer mas...
+    </button>
+  </mat-card-actions>
 </mat-card>
