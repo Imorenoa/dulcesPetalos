@@ -9,13 +9,26 @@ import { FlowersService } from 'src/app/services/flowers.service';
   styleUrls: ['./list-view.component.css'],
 })
 export class ListViewComponent implements OnInit {
+  isLoadingFlowers: boolean = false;
+
   flowers: Flower[] = [];
 
   constructor(private _flowersService: FlowersService) {}
 
   ngOnInit(): void {
-    this._flowersService.getFlowerList().subscribe((flowers) => {
-      this.flowers = flowers;
+    this.getFlowersData();
+  }
+
+  public getFlowersData() {
+    this.isLoadingFlowers = true;
+    this._flowersService.getFlowerList().subscribe({
+      next: (flower) => {
+        this.isLoadingFlowers = false;
+        return (this.flowers = flower);
+      },
+      error: (error: any) => {
+        this.isLoadingFlowers = false;
+      },
     });
   }
 }

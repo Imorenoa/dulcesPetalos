@@ -1,1 +1,41 @@
-<p>detail works!</p>
+<div class="back-button">
+  <button mat-raised-button routerLink="/list">Volver al listado</button>
+</div>
+<div class="spinner" *ngIf="isLoadingFlower; else flowerLoaded">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+<ng-template #flowerLoaded>
+  <div class="container-detail">
+    <div class="container-detail-flower">
+      <div class="container-detail-img">
+        <img src="{{ flower.imgUrl }}" alt="Imagen de {{ flower.name }}" />
+      </div>
+      <div class="details">
+        <h3>Detalles:</h3>
+        <ul>
+          <li>
+            <p>Nombre: {{ flower.name }}</p>
+          </li>
+          <li>
+            <p>
+              Nombre cientifico:
+              <span class="binomial-name"> {{ flower.binomialName }} </span>
+            </p>
+          </li>
+          <li>
+            <p>Precio: {{ flower.price | currency : "EUR" }}</p>
+          </li>
+          <li>
+            <p>Riego por semana: {{ flower.wateringsPerWeek }}</p>
+          </li>
+          <li>
+            <p>Fertilizante recomendado: {{ flower.fertilizerType }}</p>
+          </li>
+          <li>
+            <p>Altura: {{ flower.heightInCm }}cm</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>

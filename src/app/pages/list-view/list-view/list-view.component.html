@@ -1,7 +1,14 @@
-<app-search></app-search>
+<div class="search">
+  <app-search></app-search>
+</div>
 <div class="flower-card-list">
-  <app-flower-item
-    *ngFor="let flower of flowers"
-    [flower]="flower"
-  ></app-flower-item>
+  <div class="spinner" *ngIf="isLoadingFlowers; else flowersLoaded">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <ng-template #flowersLoaded>
+    <app-flower-item
+      *ngFor="let flower of flowers"
+      [flower]="flower"
+    ></app-flower-item>
+  </ng-template>
 </div>

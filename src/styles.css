@@ -5,16 +5,49 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  background-color: #ebebeb;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 2px #f7b3c0;
+}
+.header img {
+  cursor: pointer;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.title h1 {
+  font-size: 80px;
+  font-family: "Dancing Script", cursive;
+}
+
+.container {
+  padding: 50px;
+}
+
+/* List page styles */
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 30px;
+}
 .flower-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #f7b4c0;
 }
 .flower-card-list {
-  padding: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 50px;
@@ -28,4 +61,36 @@ body {
 
 mat-card-content {
   margin-top: 10px;
+}
+
+/* Detail page styles */
+.container-detail {
+  background-color: #f7b4c0;
+}
+
+.back-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.container-detail-flower {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  justify-content: space-evenly;
+  padding: 50px 0;
+}
+.container-detail-img {
+  display: flex;
+  justify-content: center-flower;
+}
+li {
+  list-style: none;
+}
+li .binomial-name {
+  font-style: oblique;
+}
+
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #bada55;
 }
