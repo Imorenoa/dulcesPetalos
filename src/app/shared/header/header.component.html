@@ -1,0 +1,13 @@
+<div class="header">
+  <img
+    src="../assets/icons8-flower-doodle-96.png"
+    alt="Imagen del logo"
+    routerLink="/home"
+  />
+  <div *ngFor="let breadcrumb of crumbs">
+    <a class="breadcrumb" href="/{{ breadcrumb }}"> {{ breadcrumb }} </a>
+  </div>
+  <div class="title">
+    <h1>Dulces pétalos</h1>
+  </div>
+</div>

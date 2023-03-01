@@ -15,6 +15,7 @@ body {
   align-items: center;
   padding: 10px;
   box-shadow: 0px 0px 10px 2px #f7b3c0;
+  height: 10vh;
 }
 .header img {
   cursor: pointer;
@@ -28,6 +29,10 @@ body {
 .title h1 {
   font-size: 80px;
   font-family: "Dancing Script", cursive;
+}
+
+.breadcrumb:not(:first-child)::before {
+  content: " > ";
 }
 
 .container {

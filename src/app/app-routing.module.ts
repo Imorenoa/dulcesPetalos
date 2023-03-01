@@ -6,16 +6,16 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: 'home',
     component: ListViewComponent,
   },
   {
-    path: 'detail/:id',
+    path: 'home/detail/:id',
     component: DetailComponent,
   },
   {
     path: '**',
-    redirectTo: 'list',
+    redirectTo: 'home',
   },
 ];
 

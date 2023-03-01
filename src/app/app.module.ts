@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListViewModule } from './pages/list-view/list-view.module';
 import { MaterialModule } from './material/material.module';
 import { NgModule } from '@angular/core';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, DetailComponent],
+  declarations: [AppComponent, DetailComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
