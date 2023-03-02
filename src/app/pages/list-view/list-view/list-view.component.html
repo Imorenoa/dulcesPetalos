@@ -1,5 +1,5 @@
 <div class="search">
-  <app-search></app-search>
+  <app-search (flowerEmitter)="handleData($event)"></app-search>
 </div>
 <div class="flower-card-list">
   <div class="spinner" *ngIf="isLoadingFlowers; else flowersLoaded">

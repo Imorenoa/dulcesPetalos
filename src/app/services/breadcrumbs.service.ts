@@ -12,7 +12,7 @@ export class BreadcrumbsService {
     if (parts.length > 3) {
       crumbs.push(parts[2]);
     }
-    console.log(crumbs);
+    //console.log(crumbs);
     return crumbs;
   }
 }

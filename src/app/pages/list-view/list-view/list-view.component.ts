@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, debounceTime } from 'rxjs';
 
 import { Flower } from 'src/app/interfaces/flower.interface';
 import { FlowersService } from 'src/app/services/flowers.service';
@@ -13,9 +14,15 @@ export class ListViewComponent implements OnInit {
 
   flowers: Flower[] = [];
 
+  flowerSubject = new Subject<Flower[]>();
+
   constructor(private _flowersService: FlowersService) {}
 
   ngOnInit(): void {
+    this.flowerSubject.pipe(debounceTime(500)).subscribe((flower: Flower[]) => {
+      this.flowers = flower;
+      console.log(this.flowers);
+    });
     this.getFlowersData();
   }
 
@@ -28,7 +35,12 @@ export class ListViewComponent implements OnInit {
       },
       error: (error: any) => {
         this.isLoadingFlowers = false;
+        console.error(error);
       },
     });
+  }
+
+  handleData(flower: Flower[]) {
+    this.flowerSubject.next(flower);
   }
 }
